@@ -14,6 +14,11 @@ public class Car  implements Comparable<Car>{
 	public Car(String registrationNumber){
 		this.registrationNumber = registrationNumber;
 	}
+	
+	public Car(String registrationNumber, int price) {
+		this.registrationNumber = registrationNumber;
+		this.price = price;
+	}
 
 	public String getRegistrationNumber() {
 		return registrationNumber;
