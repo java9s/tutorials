@@ -3,14 +3,6 @@ public class Car  implements Comparable<Car>{
 	private String registrationNumber;
 	private int price;
 	
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
 	public Car(String registrationNumber){
 		this.registrationNumber = registrationNumber;
 	}
@@ -19,16 +11,8 @@ public class Car  implements Comparable<Car>{
 		this.registrationNumber = registrationNumber;
 		this.price = price;
 	}
-
-	public String getRegistrationNumber() {
-		return registrationNumber;
-	}
-
-	public void setRegistrationNumber(String registrationNumber) {
-		this.registrationNumber = registrationNumber;
-	}
 	
-	@Override
+
 	public boolean equals(Object obj) {
 		if(obj != null && obj instanceof Car){
 			String regNumber = ((Car)obj).getRegistrationNumber();
@@ -39,16 +23,17 @@ public class Car  implements Comparable<Car>{
 		return false;
 	}
 	
-	@Override
 	public int hashCode() {
 		return this.registrationNumber.hashCode();
 	}
-	@Override
+
 	public String toString() {
 		return this.registrationNumber;
 	}
 
-	@Override
+	/**
+	 * Natural ordering for car instances
+	 */
 	public int compareTo(Car o) {
 		if(this.getPrice() > o.getPrice()){
 			return 1;
@@ -56,5 +41,22 @@ public class Car  implements Comparable<Car>{
 			return -1;
 		}
 		return 0;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 }
